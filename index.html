@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Course Project Reproducible Pitch</title>
+  <meta charset="utf-8">
+  <meta name="description" content="Course Project Reproducible Pitch">
+  <meta name="author" content="shaf">
+  <meta name="generator" content="slidify" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/default.css" media="all" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/phone.css" 
+    media="only screen and (max-device-width: 480px)" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/slidify.css" >
+  <link rel="stylesheet" href="libraries/highlighters/highlight.js/css/tomorrow.css" />
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->  <link rel=stylesheet href="./assets/css/ribbons.css"></link>
+
+  
+  <!-- Grab CDN jQuery, fall back to local if offline -->
+  <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>
+  <script>window.jQuery || document.write('<script src="libraries/widgets/quiz/js/jquery.js"><\/script>')</script> 
+  <script data-main="libraries/frameworks/io2012/js/slides" 
+    src="libraries/frameworks/io2012/js/require-1.0.8.min.js">
+  </script>
+  
+  
+
+</head>
+<body style="opacity: 0">
+  <slides class="layout-widescreen">
+    
+    <!-- LOGO SLIDE -->
+        <slide class="title-slide segue nobackground">
+  <hgroup class="auto-fadein">
+    <h1>Course Project Reproducible Pitch</h1>
+    <h2>Body Mass Index (BMI) Calculator</h2>
+    <p>shaf<br/></p>
+  </hgroup>
+  <article></article>  
+</slide>
+    
+
+    <!-- SLIDES -->
+    <slide class="" id="slide-1" style="background:;">
+  <hgroup>
+    <h2>Introduction</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li><p>The body mass index (BMI) is a statistical measurement using a person’s height and weight to determine their “healthy” body weight.</p></li>
+<li><p>BMI is controversial, because it does not actually measure a person’s percentage body fat.</p></li>
+<li><p>It just displays what a healthy weight range would be for a person’s height.</p></li>
+<li><p>Regarding the BMI measure, the World Health Organization (WHO) proposes the following classification:</p>
+
+<pre><code>Starvation : BMI &lt; 14.9
+Underweight : BMI [15-18.4]
+Normal : BMI [18.5-22.9]
+Overweight : BMI [23-27.5]
+Obese : BMI [27.6-40]
+Morbidly Obese : BMI greater than 40
+</code></pre></li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>How is it calculated?</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>There is a formula for calculating the BMI measure. The formula is the following:</p>
+
+<p>BMI = weight (kg) / height (meter)2</p>
+
+<p>Example :</p>
+
+<pre><code class="r">    weight = 78
+    height = 1.8
+    BMI &lt;- weight/height^2
+    BMI
+</code></pre>
+
+<pre><code>## [1] 24.07407
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Classification</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>The function to classify the BMI is the following:</p>
+
+<pre><code class="r">    category_func &lt;- function(weight,height) {
+        BMI_value &lt;- weight/(height^2)
+        if (BMI_value &lt; 14.9) print(&quot;Starvation&quot;)
+        else if (BMI_value &lt; 18.4) print(&quot;Underweight&quot;)
+        else if (BMI_value &lt; 22.9) print(&quot;Normal&quot;)
+        else if (BMI_value &lt; 22.7) print(&quot;Overweight&quot;)
+        else if (BMI_value &lt; 40) print(&quot;Obese&quot;)
+        else print(&quot;Morbidly Obese&quot;)
+    }
+</code></pre>
+
+<p>Example :</p>
+
+<pre><code class="r">    category_func(78,1.8)
+</code></pre>
+
+<pre><code>## [1] &quot;Obese&quot;
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Conclusion</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>While BMI is fast and easy to calculate, it should not be the be all end all of determining whether or not someone is at a healthy weight.</p>
+
+<p>However, if someone has a low BMI or a really high BMI, that should signal the potential for health problems and that person should see their doctor to discuss this.</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+    <slide class="backdrop"></slide>
+  </slides>
+  <div class="pagination pagination-small" id='io2012-ptoc' style="display:none;">
+    <ul>
+      <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=1 title='Introduction'>
+         1
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=2 title='How is it calculated?'>
+         2
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=3 title='Classification'>
+         3
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=4 title='Conclusion'>
+         4
+      </a>
+    </li>
+  </ul>
+  </div>  <!--[if IE]>
+    <script 
+      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">  
+    </script>
+    <script>CFInstall.check({mode: 'overlay'});</script>
+  <![endif]-->
+</body>
+  <!-- Load Javascripts for Widgets -->
+  
+  <!-- LOAD HIGHLIGHTER JS FILES -->
+  <script src="libraries/highlighters/highlight.js/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <!-- DONE LOADING HIGHLIGHTER JS FILES -->
+   
+  </html>
